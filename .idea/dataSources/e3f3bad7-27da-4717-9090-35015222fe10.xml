@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="college@vps321121.ovh.net">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="college">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="collegenew"/>
+    <schema id="4" parent="1" name="devicemanager"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="test"/>
+    <table id="9" parent="2" name="classe"/>
+    <table id="10" parent="2" name="domaine"/>
+    <table id="11" parent="2" name="eleve"/>
+    <table id="12" parent="2" name="enseignant"/>
+    <table id="13" parent="2" name="eval"/>
+    <table id="14" parent="2" name="fichier"/>
+    <table id="15" parent="2" name="matiere"/>
+    <table id="16" parent="2" name="matobj"/>
+    <table id="17" parent="2" name="note"/>
+    <table id="18" parent="2" name="objectif"/>
+    <table id="19" parent="2" name="objectif2"/>
+    <column id="20" parent="9" name="niveau">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="9" name="nom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="22" parent="9" name="id_classe">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="9" name="active">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="24" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_classe</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="10" name="id_domaine">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="10" name="nom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="27" parent="10" name="numero">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="28" parent="10" name="active">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="29" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_domaine</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="11" name="id_eleve">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="11" name="nom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="32" parent="11" name="prenom">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="33" parent="11" name="datenaissance">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="34" parent="11" name="mail1">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="35" parent="11" name="mail2">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="36" parent="11" name="pseudo">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="37" parent="11" name="mdp">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="38" parent="11" name="id_classe">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <index id="39" parent="11" name="elve_vers_classe">
+      <ColNames>id_classe</ColNames>
+    </index>
+    <key id="40" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_eleve</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="11" name="elve_vers_classe">
+      <ColNames>id_classe</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>classe</RefTableName>
+      <RefColNames>id_classe</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="42" parent="12" name="nom">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="prenom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="12" name="mail">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="45" parent="12" name="pseudo">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="46" parent="12" name="mdp">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="47" parent="12" name="id_enseignant">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <key id="48" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_enseignant</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="13" name="id_eval">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="50" parent="13" name="id_enseignant">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="13" name="date">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="13" name="type">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="53" parent="13" name="id_classe">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="13" name="id_matiere">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="13" name="nom">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="13" name="description">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="57" parent="13" name="id_fichier">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="58" parent="13" name="eval_vers_classe">
+      <ColNames>id_classe</ColNames>
+    </index>
+    <index id="59" parent="13" name="eval_vers_enseignant">
+      <ColNames>id_enseignant</ColNames>
+    </index>
+    <index id="60" parent="13" name="eval_vers_matiere">
+      <ColNames>id_matiere</ColNames>
+    </index>
+    <index id="61" parent="13" name="id_fichier">
+      <ColNames>id_fichier</ColNames>
+    </index>
+    <key id="62" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_eval</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="63" parent="13" name="eval_vers_enseignant">
+      <ColNames>id_enseignant</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>enseignant</RefTableName>
+      <RefColNames>id_enseignant</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="64" parent="13" name="eval_vers_classe">
+      <ColNames>id_classe</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>classe</RefTableName>
+      <RefColNames>id_classe</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="65" parent="13" name="eval_vers_matiere">
+      <ColNames>id_matiere</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>matiere</RefTableName>
+      <RefColNames>id_matiere</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="66" parent="14" name="id_fichier">
+      <Position>1</Position>
+      <DataType>bigint(20) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="67" parent="14" name="nom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="68" parent="14" name="type">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="69" parent="14" name="adresse">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <index id="70" parent="14" name="id_fichier">
+      <ColNames>id_fichier</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="71" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_fichier</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="72" parent="14" name="id_fichier">
+      <ColNames>id_fichier</ColNames>
+      <UnderlyingIndexName>id_fichier</UnderlyingIndexName>
+    </key>
+    <column id="73" parent="15" name="id_matiere">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="74" parent="15" name="nom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="15" name="abr">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="15" name="active">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="77" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_matiere</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="78" parent="16" name="id_matobj">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="79" parent="16" name="id_matiere">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="16" name="id_objectif">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="81" parent="16" name="matcomp_vers_matiere">
+      <ColNames>id_matiere</ColNames>
+    </index>
+    <index id="82" parent="16" name="matcomp_vers_obj">
+      <ColNames>id_objectif</ColNames>
+    </index>
+    <key id="83" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_matobj</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="84" parent="16" name="matcomp_vers_matiere">
+      <ColNames>id_matiere</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>matiere</RefTableName>
+      <RefColNames>id_matiere</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="85" parent="17" name="id_note">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="86" parent="17" name="id_eleve">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="17" name="val">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="88" parent="17" name="id_objectif">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="17" name="absent">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="90" parent="17" name="num">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="91" parent="17" name="id_eval">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="92" parent="17" name="note_vers_comp">
+      <ColNames>id_objectif</ColNames>
+    </index>
+    <index id="93" parent="17" name="note_vers_eleve">
+      <ColNames>id_eleve</ColNames>
+    </index>
+    <index id="94" parent="17" name="note_vers_eval">
+      <ColNames>id_eval</ColNames>
+    </index>
+    <key id="95" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_note</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="96" parent="17" name="note_vers_eleve">
+      <ColNames>id_eleve</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>eleve</RefTableName>
+      <RefColNames>id_eleve</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="97" parent="17" name="note_vers_eval">
+      <ColNames>id_eval</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>eval</RefTableName>
+      <RefColNames>id_eval</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="98" parent="18" name="nom">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="18" name="numero">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="18" name="niveau1">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="101" parent="18" name="active">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="102" parent="18" name="datefin">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="103" parent="18" name="id_objectif">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="104" parent="18" name="niveau2">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="105" parent="18" name="niveau3">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="106" parent="18" name="niveau4">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="107" parent="18" name="id_domaine">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="108" parent="18" name="id_competence">
+      <ColNames>id_domaine</ColNames>
+    </index>
+    <index id="109" parent="18" name="id_competence_2">
+      <ColNames>id_domaine</ColNames>
+    </index>
+    <index id="110" parent="18" name="id_objectif">
+      <ColNames>id_objectif
+id_domaine</ColNames>
+    </index>
+    <index id="111" parent="18" name="objectif_vers_competence">
+      <ColNames>id_domaine</ColNames>
+    </index>
+    <key id="112" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_objectif</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="113" parent="18" name="objectif_vers_domaine">
+      <ColNames>id_domaine</ColNames>
+      <RefSchemaName>college</RefSchemaName>
+      <RefTableName>domaine</RefTableName>
+      <RefColNames>id_domaine</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="114" parent="19" name="nom">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="19" name="numero">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="116" parent="19" name="niveau1">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="117" parent="19" name="active">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="118" parent="19" name="datefin">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="119" parent="19" name="id_objectif">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="120" parent="19" name="niveau2">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="121" parent="19" name="niveau3">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="122" parent="19" name="niveau4">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="123" parent="19" name="id_domaine">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="124" parent="19" name="objectif_vers_domaine">
+      <ColNames>id_domaine</ColNames>
+    </index>
+    <key id="125" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_objectif</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

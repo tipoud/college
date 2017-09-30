@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for UIManagerDefaults -->
+
+<jnlp spec="1.0+"
+    codebase="http://www.camick.com/java/webstart/"
+    href="UIManagerDefaults.jnlp">
+    <information>
+        <title>UIManagerDefaults Application</title>
+        <vendor>Tips4Java</vendor>
+        <homepage href="http://tips4java.wordpress.com/"/>
+        <description>UIManagerDefaults Application</description>
+        <description kind="short">Display the properties of the UIManager</description>
+        <offline-allowed/>
+    </information>
+    <resources>
+	    <j2se version="1.6+"/>
+   	    <jar href="UIManagerDefaults.jar"/>
+    </resources>
+    <application-desc main-class="UIManagerDefaults"/>
+</jnlp>
